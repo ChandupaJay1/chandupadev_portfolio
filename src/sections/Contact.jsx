@@ -20,40 +20,66 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
+    // Get environment variables
+    const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
+
+    // Validate that all required environment variables are present
+    if (!serviceId || !templateId || !publicKey) {
+      setLoading(false);
+      showAlert({
+        show: true,
+        text: 'EmailJS configuration is missing. Please check your .env file.',
+        type: 'danger',
+      });
+
+      console.error('Missing EmailJS configuration. Check your .env file:', {
+        serviceId: serviceId ? '✓ Present' : '✗ Missing',
+        templateId: templateId ? '✓ Present' : '✗ Missing',
+        publicKey: publicKey ? '✓ Present' : '✗ Missing'
+      });
+      return;
+    }
+
+    // Send email using EmailJS
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         {
           from_name: form.name,
-          to_name: 'JavaScript Mastery',
+          to_name: 'ChandupaDev',
           from_email: form.email,
-          to_email: 'sujata@jsmastery.pro',
+          to_email: 'Chandupajayalath20@gmail.com',
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
+        publicKey,
       )
       .then(
-        () => {
+        (response) => {
           setLoading(false);
+          console.log('Email sent successfully:', response);
+
           showAlert({
             show: true,
             text: 'Thank you for your message 😃',
             type: 'success',
           });
 
+          // Reset form after 3 seconds
           setTimeout(() => {
-            hideAlert(false);
+            hideAlert();
             setForm({
               name: '',
               email: '',
               message: '',
             });
-          }, [3000]);
+          }, 3000);
         },
         (error) => {
           setLoading(false);
-          console.error(error);
+          console.error('EmailJS Error:', error);
 
           showAlert({
             show: true,
@@ -74,8 +100,8 @@ const Contact = () => {
         <div className="contact-container">
           <h3 className="head-text">Let's talk</h3>
           <p className="text-lg text-white-600 mt-3">
-            Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
-            life, I’m here to help.
+            Whether you're looking to build a new website, improve your existing platform, or bring a unique project to
+            life, I'm here to help.
           </p>
 
           <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
@@ -120,7 +146,6 @@ const Contact = () => {
 
             <button className="field-btn" type="submit" disabled={loading}>
               {loading ? 'Sending...' : 'Send Message'}
-
               <img src="/assets/arrow-up.png" alt="arrow-up" className="field-btn_arrow" />
             </button>
           </form>
