@@ -58,13 +58,13 @@ export const clientReviews = [
 
 export const myProjects = [
   {
-    title: 'Podcastr - AI Podcast Platform',
+    title: 'D26 Clothings - E-Commerce',
     desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
     subdesc:
       'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
     href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
-    texture: '/textures/project/project1.mp4',
-    logo: '/assets/project-logo1.png',
+    texture: '/textures/project/OnlineStore.mp4',
+    logo: '/assets/project_img/project-logo1.png',
     logoStyle: {
       backgroundColor: '#2A1816',
       border: '0.2px solid #36201D',
@@ -74,34 +74,34 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/exp_img/react.svg',
+        name: 'Java',
+        path: '/assets/exp_img/java.svg',
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: '/assets/exp_img/tailwindcss.png',
+        name: 'PHP',
+        path: '/assets/exp_img/php.svg',
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/exp_img/typescript.png',
+        name: 'MySQL',
+        path: '/assets/exp_img/mysql.svg',
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/exp_img/framer.png',
+        name: 'Boostrap',
+        path: '/assets/exp_img/bootstrap.svg',
       },
     ],
   },
   {
-    title: 'LiveDoc - Real-Time Google Docs Clone',
+    title: 'D2Clothings M-Commerce App',
     desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
     subdesc:
       'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
     href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
-    texture: '/textures/project/project2.mp4',
-    logo: '/assets/project-logo2.png',
+    texture: '/textures/project/D2Clothings.mp4',
+    logo: '/assets/project_img/project-logo2.png',
     logoStyle: {
       backgroundColor: '#13202F',
       border: '0.2px solid #17293E',
@@ -111,13 +111,13 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/exp_img/react.svg',
+        name: 'Android',
+        path: '/assets/exp_img/android.svg',
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: '/assets/exp_img/tailwindcss.png',
+        name: 'Java',
+        path: '/assets/exp_img/java.svg',
       },
       {
         id: 3,
@@ -126,8 +126,8 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/exp_img/framer.png',
+        name: 'MongoDB',
+        path: '/assets/exp_img/MongoDB.svg',
       },
     ],
   },
