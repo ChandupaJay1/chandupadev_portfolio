@@ -7,6 +7,8 @@ import Clients from './sections/Clients.jsx';
 import Projects from './sections/Projects.jsx';
 import WorkExperience from './sections/Experience.jsx';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
+
 const App = () => {
   return (
     <main className="max-w-7xl mx-auto relative">
@@ -19,6 +21,7 @@ const App = () => {
       <Contact />
       <Footer />
       <Analytics />
+      <SpeedInsights />
     </main>
   );
 };
